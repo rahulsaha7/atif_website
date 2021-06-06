@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Mobile-Web Accesibilty</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+        <!-- CSS only -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" >
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" ></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" ></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" ></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    </head>
+<body>
+    <section id="nav-bar">
+        <nav class="navbar navbar-expand-lg navbar-light ">
+      <a class="navbar-brand" href="#"><img src="Image/logo.png"></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+     <i class="fas fa-bars"></i>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+      <ul class="navbar-nav ">
+        <li class="nav-item">
+          <a class="nav-link " aria-current="page" href="home.html">HOME</a>
+        </li>
+          <li class="nav-item">
+          <a class="nav-link" href="home.html#gallery">GALLERY</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="home.html#about-us">TUTORIAL</a>
+        </li>
+          <li class="nav-item">
+          <a class="nav-link " href="#footer">CONTACT</a>
+        </li>
+      </ul>
+    </div>
+</nav>
+    </section>
+<!----------------------Middle Section-------------------------------->
+     <section class="mobileaccessibility">
+    <div class="container">
+        <div class="row justify-content-center" >
+         <div class="col-md-8">
+             
+            						
+<article id="post-19643" class="post-19643 post type-post status-publish format-standard has-post-thumbnail hentry category-accessibility-resources-for-developers tag-mobile-accessibility-2 tag-mobile-accessibility-best-practices tag-mobile-developers tag-mobile-web tag-mobile-web-accessibility tag-pinch-to-zoom">
+	<div class="entry-content">
+		<h1 class="entry-title">Accessibility for Mobile Web: Fixing Pinch to Zoom</h1>
+		<p><img class="aligncenter size-full wp-image-19653" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%201397%20594'%3E%3C/svg%3E" alt="Illustration of pinch to zoom" data-lazy-src="https://www.deque.com/wp-content/uploads/2017/12/Screen-Shot-2017-12-11-at-3.01.57-PM.png" width="1397" height="594"><noscript><img class="aligncenter size-full wp-image-19653" src="https://www.deque.com/wp-content/uploads/2017/12/Screen-Shot-2017-12-11-at-3.01.57-PM.png" alt="Illustration of pinch to zoom" width="1397" height="594" /></noscript></p>
+<p>Hey, everyone! Let’s talk a little bit about pinch to zoom on a mobile device. A key feature of mobile browsing is being able to zoom in to read content and then to zoom out to locate content on the page. Sadly, there is a misconception among responsive developers and designers&nbsp;that a properly implemented responsive web design site doesn’t need to allow zooming.</p>
+<p>I want to dive into the accessibility effects of what happens when you disable pinch to&nbsp;zoom. I will discuss the different examples of what happens when developers and designers disable this feature on both iOS and Android devices and ultimately why they should not disable pinch to zoom.</p>
+<p>Follow along here in my recorded walkthrough if you’d like:</p>
+<div class="responsive-embed"><div class="rll-youtube-player" data-src="https://www.youtube.com/embed/ru3yAN_k8iE" data-id="ru3yAN_k8iE" data-query="feature=oembed"><iframe src="https://www.youtube.com/embed/ru3yAN_k8iE?autoplay=1&amp;feature=oembed" allowfullscreen="1" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" frameborder="0"></iframe></div><noscript><iframe title="Understanding the Accessibility effects of disabling pinch to zoom" width="640" height="360" src="https://www.youtube.com/embed/ru3yAN_k8iE?feature=oembed" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen title="Video Player"></iframe></noscript></div>
+<h2>WCAG 2.0 and Pinch to Zoom</h2>
+<p>Pinch to zoom is when a user zooms in on a mobile device by pinching the screen, allowing you to zoom in and out. Sometimes designers and developers decide that they want to disable that feature. Let’s explore what happens to the code when this feature is disabled. For example, an important bit of code under Meta Tag is called Viewport. I’m going to discuss the good and the bad about disabling this bit of code.</p>
+<p>Under the World Wide Web Consortium’s (W3C) web&nbsp;content accessibility guidelines (<b>WCAG</b>), is success criteria 1.4.4, which is titled “resize text”. It reads, “Except for captions and images of text, text can be resized without assistive technology up to 200% without loss of content or functionality. “This success criterion is Level AA, which is the middle level of conformance, meaning the web page satisfies all the Level A and AA success criteria. If developers and designers disable and prevent pinch to zoom from happening, we’re actually failing this success criterion.</p>
+<h2>Pinch to Zoom on iOS Devices</h2>
+<p>The first example I’m going to provide illustrates the best practice behind the code for pinch to zoom. This code is responsive design, the code is actually in the head and is meta name viewport. The name viewport is the location where pinch to zoom could be disabled and there are two ways to disable pinch to zoom in this meta tag. Let’s look at this a little closer, you’re going to see a content and there are two things you will want to pay close attention to.</p>
+<p>First, is user-scalable=no and maximum-scale=1.0. These tags are the ones that will turn pinch to zoom shut off, disabling the feature. Now, by removing these tags, you fix this issue. Additionally, Apple and iOS devices, recently updated their new versions so that this is not possible, which is a great win for accessibility. Even if someone tried to put this snippet of code in it would not disable touch to zoom.</p>
+<h2>Pinch to Zoom on Android Devices</h2>
+<p>However, this is not the case with the Android device. With an Android device, the device will still recognize this meta tag. Unfortunately, allowing developers or designers to disable pinch to zoom.</p>
+<p>The best rule of thumb is that if you’re unsure of something empathetically think of what the end user is doing.&nbsp;Consider the contrast issues with using a phone in sunlight or you’re a person with low vision. Imagine you are someone with limited fine motor control. Or even the developer did a poor job with responsive design and having zoom enabled is necessary to just use the page (yes, this happens). Go to the device and test it with these constraints and design with accessibility in mind. Leave your comments and questions below!</p>
+<style type="text/css"> .wp-image-19653 { display: none; }</style>	</div><!-- .entry-content -->
+</article><!-- #post-## -->
+					</div>
+            </div>
+        </div>
+         
+    </section>
+    
+
+
+    
+<!-----------------Footer Section------------------------->
+    
+<section id="footer">
+<div class="container">
+<div class="row">
+<div class="col-md-4 footer-box">
+<img src="Image/logo.png">
+     <p><b><strong>COMPLIANCE</strong></b></p>
+    <ul>
+        <li> <p><a a style="color: aliceblue"href="https://www.deque.com/ada-compliance/">ADA</a></p></li>
+        <li><p><a a style="color: aliceblue"href="https://www.deque.com/wcag/">WCAG</a></p></li>
+        <li><p><a a style="color: aliceblue"href="https://www.deque.com/section-508-compliance/">Section 508</a></p></li>
+        <li><p><a a style="color: aliceblue"href="https://www.deque.com/aoda-compliance/">AODA</a></p></li>
+        <li><p><a a style="color: aliceblue"href="https://www.deque.com/cvaa-compliance/">CVAA</a></p></li>
+        <li><p><a a style="color: aliceblue"href="https://www.deque.com/vpat/">VPAT</a></p></li>
+    
+    </ul>  
+</div>
+<div class="col-md-4 footer-box">
+    <p><b>CONTACT US</b></p>
+    <p><i class="fa fa-map-marker"></i>Pondicherry University,Puducherry</p>
+    <p><i class="fa fa-phone"></i>+91 7470693743</p>
+    <p><i class="fa fa-envelope"></i>atifa7747@gmail.com</p>
+    
+</div>
+<div class="col-md-4 footer-box">
+    <p><b>SUBSCRIBE</b></p>
+    <input type="email" class="form-control" placeholder="Your Email">
+    <button type="button" class="btn btn-primary">Subscribe</button>
+    
+</div>
+</div>
+    <hr>
+    <p class="copyright">Website Created by Mohammed Atif Ansari</p>
+</div>
+</section>
+    
+<!-------------------Smooth Scroll---------------------------->
+<script src="smooth-scroll.js"></script>    
+ <script>
+	var scroll = new SmoothScroll('a[href*="#"]');
+</script>
+</body>
+
+</html>
+    

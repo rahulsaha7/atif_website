@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Mobile-Web Accesibilty</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+        <!-- CSS only -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" >
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" ></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" ></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" ></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    </head>
+<body>
+    <section id="nav-bar">
+        <nav class="navbar navbar-expand-lg navbar-light ">
+      <a class="navbar-brand" href="#"><img src="Image/logo.png"></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+     <i class="fas fa-bars"></i>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+      <ul class="navbar-nav ">
+        <li class="nav-item">
+          <a class="nav-link " aria-current="page" href="home.html">HOME</a>
+        </li>
+          <li class="nav-item">
+          <a class="nav-link" href="home.html#gallery">GALLERY</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="home.html#about-us">TUTORIAL</a>
+        </li>
+          <li class="nav-item">
+          <a class="nav-link " href="#footer">CONTACT</a>
+        </li>
+      </ul>
+    </div>
+</nav>
+    </section>
+<!----------------------Middle Section-------------------------------->
+    <section class="mobileaccessibility">
+    <div class="container">
+        <div class="row justify-content-center" >
+         <div class="col-md-8">
+            <h1 class="test text-center">Accessibility Testing for the Mobile Web</h1>
+             <p>Today’s web landscape has evolved from its humble beginnings. More often than not, users are accessing web content from a mobile device like a tablet or smartphone. In this article, we will be exploring the basics of leveraging automated accessibility testing on mobile web experiences.</p>
+             <p>First off, let’s make sure we are clear on what the mobile web is and how accessibility factors in. When we say “Mobile Web,” we are referring to a browser-based website that is accessed from a portable wireless device – not native mobile applications. In most cases, mobile web experiences are occurring on a smartphone, tablet, or perhaps even a handheld gaming device. No matter the platform, a digital experience should meet the <a href="https://www.deque.com/wcag/">Web Content Accessibility Guidelines</a>, also known as WCAG to ensure all members of the audience are equally reached.</p>
+             <h2>Why is Mobile Web Accessibility Important?</h2>
+             <hr style="height:1px;width:100%;color:red;background-color:darkred">  
+             <p>If you’re like me and millions of other people, you may find that a majority of your browsing is performed on a mobile device. Statistics show that <a href="https://www.thinkwithgoogle.com/marketing-strategies/app-and-mobile/mobile-web-traffic-statistics/">&gt; 50%</a> of web traffic is coming from mobile devices. Also, it’s interesting to note that <a href="https://www.thinkwithgoogle.com/marketing-strategies/app-and-mobile/smartphone-user-mobile-app-purchase-data/">39%</a> of smartphone users are more likely to browse or purchase products from vendors who have a quality mobile web experience.</p>
+             <p>Mobile devices are not going away anytime soon and, in fact, they seem to be growing in popularity and usage. This is a critically important concept for organizations that want to reach their audience in a more effective way. An accessible mobile web experience ensures that everyone using a mobile device (plus any assistive technologies) has equal access to the content.</p>
+             <h2>Automation: a Powerful and Simple First Step</h2>
+             <hr style="height:1px;width:100%;color:red;background-color:darkred"> 
+             <p>Accessibility automation accounts for around 50% of the reported defects, and in some cases more. Manual testing is always required to reach full compliance, but automation is a great way to get started. The easiest way to start this journey is to use the <a href="https://chrome.google.com/webstore/detail/axe-web-accessibility-tes/lhdoppojpmngadmnindnejefpokejbdd?hl=en-US">axe browser extension</a> for Chrome, Firefox, or Edge. If you haven’t installed this yet, do so now. The axe browser extension is a free and easy-to-use developer tool that analyzes a web page for accessibility bugs with just a click of a button.</p>
+             <h2>ENOUGH TALK. LET’S TEST!</h2>
+             <hr style="height:1px;width:100%;color:red;background-color:darkred">
+             <p>Once you’ve installed axe, follow these steps:</p>
+             
+             <ol style="padding-left: 20px; list-style-position: outside;">
+<li style="font-size: 15px;">Open/Navigate to the site you want to test.</li>
+<li style="font-size: 15px;">Open the developer tools and click the “Toggle Device Emulation” feature. You should see your application displayed (or responsively resized) in mobile dimensions.
+   </li>
+<br>
+   <br>
+    
+        
+      <img src="Image/Picture1.png" class="img-fluid">  <br>
+    <img src="Image/Picture2.png" class="img-fluid"><br>  
+  
+    
+     <li style="font-size: 15px;">Open the axe extension in your browser devtools and perform a scan.</li>
+        <img src="Image/Picture3.png" class="img-fluid"><br>
+</ol>
+             <p>With this tool, you have the ability to perform automated accessibility testing on your site with very little effort. If axe finds any issues, it will tell you what the problems are, where they are on the page, and how to fix them.</p>
+             <p><strong>Pro-tip:</strong> use <a href="https://axe.deque.com/signup">axe Beta</a> to perform further testing beyond what automation alone can provide. Axe Pro has Intelligent Guided Tests, which is a wizard-based or semi-automated feature that increases the coverage by validating the tab order, buttons &amp; links, image alt text, and more, without having to be an accessibility expert. In combination with automation, Intelligent Guided Tests increases accessibility testing coverage to 76-84%.</p>
+             
+             <h2>Even More Automation: axe-core and Puppeteer!</h2>
+              <hr style="height:1px;width:100%;color:red;background-color:darkred"> 
+             <p>Let’s get more sophisticated and experiment with open source tools for even more automation. You can use a wide array of tools to do the job here, but in my example, I am going to use <a href="https://github.com/puppeteer/puppeteer">Puppeteer</a>. We will use the <a href="https://github.com/dequelabs/axe-core">axe-core</a> library to perform the automated accessibility testing.</p>
+             <p>In the example below, I have used Puppeteer’s built-in emulation feature. This is just a fancy way of resizing the browser under test to mobile proportions in portrait mode (yes, it’s actually that easy).</p>
+             
+             <div class="crayon-pre" style="font-size: 16 line-height: 24px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; align-content:space-between; tab-size:4;"><div class="crayon-line" id="crayon-60ba36f36fbb9847391492-0">&nbsp;</div><div class="crayon-line crayon-striped-line" id="crayon-60ba36f36fbb9847391492-1"><span class="crayon-m">const</span><span class="crayon-h"> </span><span class="crayon-sy">{</span><span class="crayon-h"> </span><span class="crayon-i">AxePuppeteer</span><span class="crayon-h"> </span><span class="crayon-sy">}</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-e">require</span><span class="crayon-sy">(</span><span class="crayon-s">'@axe-core/puppeteer'</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-60ba36f36fbb9847391492-2">&nbsp;</div><div class="crayon-line crayon-striped-line" id="crayon-60ba36f36fbb9847391492-3"><span class="crayon-m">const</span><span class="crayon-h"> </span><span class="crayon-v">puppeteer</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-e">require</span><span class="crayon-sy">(</span><span class="crayon-s">'puppeteer'</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-60ba36f36fbb9847391492-4">&nbsp;</div><div class="crayon-line crayon-striped-line" id="crayon-60ba36f36fbb9847391492-5"><span class="crayon-sy">(</span><span class="crayon-e">async</span><span class="crayon-h"> </span><span class="crayon-sy">(</span><span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-o">&gt;</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-60ba36f36fbb9847391492-6">&nbsp;</div><div class="crayon-line crayon-striped-line" id="crayon-60ba36f36fbb9847391492-7"><span class="crayon-m">const</span><span class="crayon-h"> </span><span class="crayon-v">browser</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-e">await </span><span class="crayon-v">puppeteer</span><span class="crayon-sy">.</span><span class="crayon-e">launch</span><span class="crayon-sy">(</span><span class="crayon-sy">{</span>&nbsp;<span class="crayon-h"> </span><span class="crayon-v">headless</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-t">false</span><span class="crayon-h"> </span><span class="crayon-sy">}</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-60ba36f36fbb9847391492-8">&nbsp;</div><div class="crayon-line crayon-striped-line" id="crayon-60ba36f36fbb9847391492-9"><span class="crayon-m">const</span><span class="crayon-h"> </span><span class="crayon-v">page</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-e">await </span><span class="crayon-v">browser</span><span class="crayon-sy">.</span><span class="crayon-e">newPage</span><span class="crayon-sy">(</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-60ba36f36fbb9847391492-10">&nbsp;</div><div class="crayon-line crayon-striped-line" id="crayon-60ba36f36fbb9847391492-11"><span class="crayon-e">await </span><span class="crayon-v">page</span><span class="crayon-sy">.</span><span class="crayon-e">setBypassCSP</span><span class="crayon-sy">(</span><span class="crayon-t">true</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-60ba36f36fbb9847391492-12">&nbsp;</div><div class="crayon-line crayon-striped-line" id="crayon-60ba36f36fbb9847391492-13"><span class="crayon-c">// Emulate a mobile device</span></div><div class="crayon-line" id="crayon-60ba36f36fbb9847391492-14">&nbsp;</div><div class="crayon-line crayon-striped-line" id="crayon-60ba36f36fbb9847391492-15"><span class="crayon-e">await </span><span class="crayon-v">page</span><span class="crayon-sy">.</span><span class="crayon-e">emulate</span><span class="crayon-sy">(</span><span class="crayon-v">puppeteer</span><span class="crayon-sy">.</span><span class="crayon-v">devices</span><span class="crayon-sy">[</span><span class="crayon-s">'Pixel 2'</span><span class="crayon-sy">]</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-60ba36f36fbb9847391492-16">&nbsp;</div><div class="crayon-line crayon-striped-line" id="crayon-60ba36f36fbb9847391492-17"><span class="crayon-e">await </span><span class="crayon-v">page</span><span class="crayon-sy">.</span><span class="crayon-st">goto</span><span class="crayon-sy">(</span><span class="crayon-s">'https://www.deque.com'</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-60ba36f36fbb9847391492-18">&nbsp;</div><div class="crayon-line crayon-striped-line" id="crayon-60ba36f36fbb9847391492-19"><span class="crayon-c">// Run the accessibility tests and gather the results</span></div><div class="crayon-line" id="crayon-60ba36f36fbb9847391492-20">&nbsp;</div><div class="crayon-line crayon-striped-line" id="crayon-60ba36f36fbb9847391492-21"><span class="crayon-m">const</span><span class="crayon-h"> </span><span class="crayon-v">results</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-e">await </span><span class="crayon-r">new</span><span class="crayon-h"> </span><span class="crayon-e">AxePuppeteer</span><span class="crayon-sy">(</span><span class="crayon-v">page</span><span class="crayon-sy">)</span><span class="crayon-sy">.</span><span class="crayon-e">analyze</span><span class="crayon-sy">(</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-60ba36f36fbb9847391492-22">&nbsp;</div><div class="crayon-line crayon-striped-line" id="crayon-60ba36f36fbb9847391492-23"><span class="crayon-v">console</span><span class="crayon-sy">.</span><span class="crayon-e">log</span><span class="crayon-sy">(</span><span class="crayon-v">results</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-60ba36f36fbb9847391492-24">&nbsp;</div><div class="crayon-line crayon-striped-line" id="crayon-60ba36f36fbb9847391492-25"><span class="crayon-e">await </span><span class="crayon-v">page</span><span class="crayon-sy">.</span><span class="crayon-e">close</span><span class="crayon-sy">(</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-60ba36f36fbb9847391492-26">&nbsp;</div><div class="crayon-line crayon-striped-line" id="crayon-60ba36f36fbb9847391492-27"><span class="crayon-e">await </span><span class="crayon-v">browser</span><span class="crayon-sy">.</span><span class="crayon-e">close</span><span class="crayon-sy">(</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-60ba36f36fbb9847391492-28">&nbsp;</div><div class="crayon-line crayon-striped-line" id="crayon-60ba36f36fbb9847391492-29"><span class="crayon-sy">}</span><span class="crayon-sy">)</span><span class="crayon-sy">(</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-60ba36f36fbb9847391492-30">&nbsp;</div></div>
+             
+             <p>You can change the configurations to test for landscape mode, or perhaps test with different devices altogether.</p>
+             
+             <h2>Why does this work?</h2>
+              <hr style="height:1px;width:100%;color:red;background-color:darkred"> 
+             
+             <p><em>(see the caveats below for the assumptions)</em></p>
+             <p>Modern assistive technologies interact with the DOM rendered HTML. For Mobile web, the interaction between mobile assistive technologies and the Dom rendered HTML is no different.</p>
+             <p>From an automation standpoint, axe-core will test the validity of your DOM rendered HTML, thus ensuring items like:</p>
+             
+             <ul style="padding-left: 20px; list-style-position: outside;">
+<li  style="font-size: 15px;">form elements, images, and buttons have accessible text</li>
+<li  style="font-size: 15px;">valid aria attributes and values</li>
+<li  style="font-size: 15px;">valid table structures</li>
+</ul>
+             
+             <p>There are more steps you’ll need to take to guarantee a quality, accessible experience but starting with automation is a simple and scalable way to start creating a more inclusive mobile web experience for users with disabilities.</p>
+             
+             <h2>Pro Tips</h2>
+             <hr style="height:1px;width:100%;color:red;background-color:darkred"> 
+             
+             <ul style="padding-left: 20px; list-style-position: outside;">
+<li  style="font-size: 15px;">Be sure to watch out for page content that relies on user-agents. This may be old-school, but it is still a thing. A simple solution is to ensure your test code sets a mobile device user agent.</li>
+<li  style="font-size: 15px;">Leverage UI component level tests in addition to e2e coverage. This will maximize the coverage that you are able to provide and can help you test the many mutations of an individual component or composite view.</li>
+<li  style="font-size: 15px;">Test your site using multiple form factors. Tablet portrait, tablet landscape, phone portrait, phone landscape, etc.</li>
+<li  style="font-size: 15px;">Perform manual testing on a real device using built-in assistive technology. Example: safari+voiceover on iOS.</li>
+</ul>
+             
+             
+            <h2>Where to go from here?</h2> 
+              <hr style="height:1px;width:100%;color:red;background-color:darkred"> 
+             <p>Unfortunately, your content is not fully accessible to people with disabilities yet. Automation alone cannot help provide complete coverage and there is still manual testing and validation to be done. The good news is that axe browser extension has the tools available to make this process easier. Check out <a href="https://www.deque.com/axe/beta/">axe Beta</a> and use the Intelligent Guided Testing feature. This will walk you through 8 different manual tests and will help ensure greater levels of coverage (between 76-84% when combined with automation).</p>
+             
+             <h2>Unleash the Full Potential</h2>
+             <hr style="height:1px;width:100%;color:red;background-color:darkred">
+             
+             <p>Deque has more to offer for enterprise organizations. Leverage the full range of features using the axe DevTools HTML test kit which arms you with: custom rules, language and framework integrations, advanced reporting, and enterprise support.</p>
+             
+             <h2><em>Caveats</em></h2>
+             <hr style="height:1px;width:100%;color:red;background-color:darkred">
+             <p>These techniques assume that your site is being developed using modern responsive Web design capabilities rather than the (now outdated) techniques that inspect the user agent string and/or generate different HTML on the server. If you are doing that, you can still use some of the techniques mentioned here but there are additional things you might have to do to make them work consistently.</p>
+            </div>
+            
+            
+            
+        </div>
+        </div>
+    </section>
+
+    
+
+    
+<!-----------------Footer Section------------------------->
+    
+<section id="footer">
+<div class="container">
+<div class="row">
+<div class="col-md-4 footer-box">
+<img src="Image/logo.png">
+    <p><b><strong>axe TOOLS</strong></b></p>
+    <ul>
+        <li> <p><a a style="color: aliceblue"href="https://www.deque.com/axe/devtools/">axe DevTools</a></p></li>
+        <li><p><a a style="color: aliceblue"href="https://www.deque.com/axe/auditor/">axe Auditor</a></p></li>
+        <li><p><a a style="color: aliceblue"href="https://www.deque.com/axe/monitor/">axe Monitor</a></p></li>
+        <li><p><a a style="color: aliceblue"href="https://www.deque.com/axe/browser-extensions/">Free Browser Extensions</a></p></li>
+    
+    </ul> 
+</div>
+<div class="col-md-4 footer-box">
+    <p><b>CONTACT US</b></p>
+    <p><i class="fa fa-map-marker"></i>Pondicherry University,Puducherry</p>
+    <p><i class="fa fa-phone"></i>+91 7470693743</p>
+    <p><i class="fa fa-envelope"></i>atifa7747@gmail.com</p>
+    
+</div>
+<div class="col-md-4 footer-box">
+    <p><b>SUBSCRIBE</b></p>
+    <input type="email" class="form-control" placeholder="Your Email">
+    <button type="button" class="btn btn-primary">Subscribe</button>
+    
+</div>
+</div>
+    <hr>
+    <p class="copyright">Website Created by Mohammed Atif Ansari</p>
+</div>
+</section>
+    
+<!-------------------Smooth Scroll---------------------------->
+<script src="smooth-scroll.js"></script>    
+ <script>
+	var scroll = new SmoothScroll('a[href*="#"]');
+</script>
+</body>
+
+</html>
+    

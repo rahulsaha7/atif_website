@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Mobile-Web Accesibilty</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+        <!-- CSS only -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" >
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" ></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" ></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" ></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    </head>
+<body>
+    <section id="nav-bar">
+        <nav class="navbar navbar-expand-lg navbar-light ">
+      <a class="navbar-brand" href="#"><img src="Image/logo.png"></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+     <i class="fas fa-bars"></i>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+      <ul class="navbar-nav ">
+        <li class="nav-item">
+          <a class="nav-link " aria-current="page" href="home.html">HOME</a>
+        </li>
+          <li class="nav-item">
+          <a class="nav-link" href="home.html#gallery">GALLERY</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="home.html#about-us">TUTORIAL</a>
+        </li>
+          <li class="nav-item">
+          <a class="nav-link " href="#footer">CONTACT</a>
+        </li>
+      </ul>
+    </div>
+</nav>
+    </section>
+<!----------------------Middle Section-------------------------------->
+     <section class="mobileaccessibility">
+    <div class="container">
+        <div class="row justify-content-center" >
+         <div class="col-md-8">
+             <article id="post-19882" class="post-19882 post type-post status-publish format-standard has-post-thumbnail hentry category-accessibility-resources-for-developers category-accessibility-best-practices tag-color-contrast tag-design tag-mobile-web tag-ux tag-w3c tag-wcag">
+	<div class="entry-content">
+		<h1 class="entry-title">Accessibility for Mobile Web: Improving Color Contrast</h1>
+		<p><img class="wp-image-19904 size-large aligncenter" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20640%20274'%3E%3C/svg%3E" alt="illustrations of ux design and color contrast on a mobile phone" data-lazy-src="https://www.deque.com/wp-content/uploads/2018/02/Color-Contrast-for-Mobile-Web-1-1024x439.png" width="640" height="274"><noscript><img class="wp-image-19904 size-large aligncenter" src="https://www.deque.com/wp-content/uploads/2018/02/Color-Contrast-for-Mobile-Web-1-1024x439.png" alt="illustrations of ux design and color contrast on a mobile phone" width="640" height="274" /></noscript></p>
+<p>Color contrast is a hot topic in the area of accessibility testing. And often overlooked, are accessibility color contrast best practices specific to mobile web. Let’s start by diving into the web content accessibility guidelines, also known as WCAG, and the success criterion related to contrast minimum. We will also dive into things web designers should keep in mind when designing and review which tools they can use to analyze the color contrast of their designs.</p>
+<p>Follow along here in my recorded walk-through if you’d like:</p>
+<div class="responsive-embed"><div class="rll-youtube-player" data-src="https://www.youtube.com/embed/oertHgYJA74" data-id="oertHgYJA74" data-query="feature=oembed"><iframe src="https://www.youtube.com/embed/oertHgYJA74?autoplay=1&amp;feature=oembed" allowfullscreen="1" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" frameborder="0"></iframe></div><noscript><iframe title="Accessibility for Mobile Web: Improving Color Contrast" width="800" src="https://www.youtube.com/embed/oertHgYJA74?feature=oembed" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen title="Video Player"></iframe></noscript></div>
+<h2 style="text-align: center;">WCAG 2.0 and Color Contrast</h2>
+<p>In WCAG 2.0, the Web Content Accessibility Guidelines from the W3C, the AA success criterion that related to <a href="https://www.w3.org/TR/UNDERSTANDING-WCAG20/visual-audio-contrast-contrast.html" target="_blank" rel="noopener noreferrer">color contrast is 1.4.3. </a>This SC reads “contrast minimum, the visual presentation of text and images of text has a contrast ratio of at least 4.5 to 1 except for the following”:</p>
+<ul style="padding-left: 20px; list-style-position: outside;">
+<li>Large Text:&nbsp;Large-scale text and images of large-scale text have a contrast ratio of at least 3 to 1;</li>
+<li>Incidental: if the text or images of text are part of an inactive user interface component that is pure decoration, that is not visible to anyone, or that are part of a picture that contains significant other visual content, they have no contrast requirement.</li>
+<li>Logotypes: text that is part of a logo or brand name has no minimum contrast requirement.</li>
+</ul>
+<p>Let’s review large text, which could refer to 18 point or 14 point bold, or a font size that would yield equivalent. Be sure to note that the point scale was for print back in the day. Now, we’re dealing with the web and designers must look at scale in terms of pixels, percentages, and EMs. In summary, 18 point and 14 point sizes do not equate to 18 pixels and 14 pixels. Pixel size is even more relevant when designing for mobile. The environment plays more of a role, for example, there could be the different lightings. You could go to a restaurant with dim lighting or outdoors, with sun and brightness.</p>
+<h2 style="text-align: center;">Automated Tools for Analyzing Color Contrast</h2>
+<p>One way to find color contrast ratio is through automated tools. For example, Deque’s <a href="https://axe-core.org/">aXe</a> tool does a very good job analyzing what’s termed as hex code. Any automated tool that works well for you will likely do a really good job of analyzing hex code. One challenge of automated tools occurs when there is background color and a foreground color, but there is an image in between. That image could be a decorative image or it could be a gradient. Images of text also pose a challenge for automated tools. In this case, one should rely on an eyedropper tool.To use aXe, right-click inspect element to analyze the page. The report may say elements do or do not have sufficient contrast.</p>
+<h2 style="text-align: center;">Designers: Things to Note</h2>
+<p>One thing to note, if it’s 18 point or 14 point bold, the contrast ratio must be only 3 to 1. In any other situation, the contrast ratio must be a minimum of 4.5 to 1. It is also important to note that designers may change the opacity of the text. In that case, the hex code may be one color but the opacity may have changed, making the color appear to be a lighter color. Furthermore, text and images should be analyzed with an eyedropper tool to analyze the pixel of the text as the foreground and the image as the background. Once you click the pixel you want to analyze, it will copy the hex code to your clipboard.</p>
+<h2 style="text-align: center;">Types of Tools to Use</h2>
+<p><a href="https://webaim.org/resources/contrastchecker/" target="_blank" rel="noopener noreferrer">WebAIM</a> is one website that allows you copy and paste hex codes to analyze the color contrast ratio. <a href="http://contrast-finder.tanaguru.com" target="_blank" rel="noopener noreferrer">Tanaguru</a> is another great contrast tool. This tool allows you to manipulate the&nbsp;two colors you are checking and adjust the maximum ratio. It is often the case that designers will not know how to fix failing color contrast, and a lot of times the colors that they’re using are branded type colors. In that case, the best thing the subject matter experts will say that it fails, but in the end branded color is an exception. This tool will let them use the color they prefer and manipulate it to get as close to 4.5 as possible.</p>
+<h2 style="text-align: center;">Recap: Mobile is Dependant on the Environment</h2>
+<p>It is important to keep in mind too with mobile and the way mobile screens work there’s a whole other realm of text sizing. Be aware of those type things. For example, different viewports and different mobile devices have font weight issues that are relevant to accessibility. Text resizing is another factor that plays into color contrast and readability. This video is a brief overview of how designers can fix color contrast issues and which tools they can use. I also touched on a few things designers should look out for when designing for mobile web interfaces. Below are a few helpful links to help you in your future testing and design:</p>
+<ul style="padding-left: 20px; list-style-position: outside;">
+<li style="font-size: 15px;"><a href="https://websemantics.uk/tools/convert-pixel-point-em-rem-percent/">Font Size Conversion Tool</a></li>
+<li style="font-size: 15px;"><a href="http://contrast-finder.tanaguru.com/">Tanaguru contrast finder</a></li>
+<li style="font-size: 15px;"><a href="https://webaim.org/resources/contrastchecker/">WebAIM Color Contrast Checker</a></li>
+<li style="font-size: 15px;"><a href="https://www.deque.com/products/axe/">axe</a></li>
+<li style="font-size: 15px;"><a href="http://a11yideas.com/testcode/mobilewebinar/contrastmin.html">CB’s good and bad examples of color contrast</a></li>
+</ul>
+<p>Feel free to leave your comments at the bottom, ask questions, I’d love to hear them.</p>
+<style type="text/css"> .wp-image-19904 { display: none; }</style>	</div><!-- .entry-content -->
+</article>
+            </div>
+        </div>
+         </div>
+    </section>
+    
+
+
+    
+<!-----------------Footer Section------------------------->
+    
+<section id="footer">
+<div class="container">
+<div class="row">
+<div class="col-md-4 footer-box">
+<img src="Image/logo.png">
+    <p><b><strong>NEWS & RESOURCES</strong></b></p>
+    <ul>
+        <li> <p><a a style="color: aliceblue"href="https://www.deque.com/blog/">Blog</a></p></li>
+        <li><p><a a style="color: aliceblue"href="https://www.deque.com/resources/type/webinars/">Webinars</a></p></li>
+        <li><p><a a style="color: aliceblue"href="https://www.deque.com/accessible-design/">Accessibility in Design</a></p></li>
+        <li><p><a a style="color: aliceblue"href="https://www.deque.com/accessible-development/">Accessibility in Development</a></p></li>
+        <li><p><a a style="color: aliceblue"href="https://www.deque.com/shift-left/">Shift Left</a></p></li>
+    
+    </ul>  
+</div>
+<div class="col-md-4 footer-box">
+    <p><b>CONTACT US</b></p>
+    <p><i class="fa fa-map-marker"></i>Pondicherry University,Puducherry</p>
+    <p><i class="fa fa-phone"></i>+91 7470693743</p>
+    <p><i class="fa fa-envelope"></i>atifa7747@gmail.com</p>
+    
+</div>
+<div class="col-md-4 footer-box">
+    <p><b>SUBSCRIBE</b></p>
+    <input type="email" class="form-control" placeholder="Your Email">
+    <button type="button" class="btn btn-primary">Subscribe</button>
+    
+</div>
+</div>
+    <hr>
+    <p class="copyright">Website Created by Mohammed Atif Ansari</p>
+</div>
+</section>
+    
+<!-------------------Smooth Scroll---------------------------->
+<script src="smooth-scroll.js"></script>    
+ <script>
+	var scroll = new SmoothScroll('a[href*="#"]');
+</script>
+</body>
+
+</html>
+    
